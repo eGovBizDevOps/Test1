@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'war'
 
-/ See http://gradle.org/docs/current/userguide/war_plugin.html
+// See http://gradle.org/docs/current/userguide/war_plugin.html
 //   Section 26.5. Convention properties
 webAppDirName = 'WebContent'
 
@@ -27,4 +27,8 @@ sourceSets {
 dependencies {
     // Where do the JARs live on the filesystem?
     compile fileTree(dir: "${webAppDirName}/WEB-INF/lib", include: '*.jar')
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = '2.5'
 }
